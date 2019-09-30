@@ -1,0 +1,53 @@
+@import 'reset.css';
+
+* {
+	box-sizing: border-box;
+	text-decoration: none;
+}
+
+#container {
+	width: 100%;
+	/* padding: 1rem 1.25rem; */
+	background: #ccc;
+}
+
+.header {
+	display: flex;
+	flex-direction: column;
+	height: 72px;
+	overflow: hidden;
+	position: relative;
+}
+
+.header.verMenu {
+	height: auto;
+}
+
+.header__title,
+.header__subtitle {
+	margin: 0 0 .5rem;
+}
+
+.header__menu {
+	display: flex;
+	justify-content: space-evenly;
+	/* flex-direction: column; */
+}
+
+.menu__btn {
+	position: absolute;
+	right: 1rem;
+	top: 1rem;
+	border: 1px solid #000;
+	padding: .5rem;
+}
+
+.header__menu a {
+	color: darkgreen;
+	font-size: 1.2rem;
+	transition: font-weight 2s ease;
+}
+
+.header__menu a:hover {
+	font-weight: bold;
+}
