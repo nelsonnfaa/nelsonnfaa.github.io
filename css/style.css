@@ -17,10 +17,11 @@
 	height: 76px;
 	overflow: hidden;
 	position: relative;
+	transition: height 1s ease;
 }
 
 .header.verMenu {
-	height: auto;
+	height: 120px;
 }
 
 .header__title,
@@ -32,6 +33,12 @@
 	display: flex;
 	justify-content: space-evenly;
 	/* flex-direction: column; */
+	opacity: 0;
+	transition: opacity .5s ease .5s;
+}
+
+.header__menu.header__menu--opacity {
+	opacity: 1;
 }
 
 .menu__btn {
