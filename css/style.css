@@ -3,18 +3,18 @@
 * {
 	box-sizing: border-box;
 	text-decoration: none;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #container {
 	width: 100%;
-	/* padding: 1rem 1.25rem; */
 	background: #ccc;
 }
 
 .header {
 	display: flex;
 	flex-direction: column;
-	height: 72px;
+	height: 76px;
 	overflow: hidden;
 	position: relative;
 }
@@ -44,11 +44,16 @@
 }
 
 .header__menu a {
-	color: darkgreen;
+	color: darkslategray;
 	font-size: 1.2rem;
-	transition: font-weight 2s ease;
+	transition: all .5s ease;
+	text-align: center;
+	width: 100%;
+	padding: .5rem 0;
 }
 
 .header__menu a:hover {
 	font-weight: bold;
+	background-color: azure;
+	color: gray;
 }
