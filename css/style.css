@@ -6,6 +6,10 @@
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 #container {
 	width: 100%;
 	background: #ccc;
@@ -63,4 +67,50 @@
 	font-weight: bold;
 	background-color: azure;
 	color: gray;
+}
+
+#home {
+	min-height: 100vh;
+	background-color: beige;
+}
+
+#tecnologia {
+	min-height: 100vh;
+	background-color: burlywood;
+}
+
+#contacto {
+	min-height: 100vh;
+	background-color: darkturquoise;
+}
+
+.perfil__figure {
+	position: relative;
+	border-radius: 50%;
+	overflow: hidden;
+	max-width: 220px;
+	margin: 0 auto;
+}
+
+.perfil__figure figcaption {
+	background-color: azure;
+	top: -10%;
+	left: calc(50% - 110px);
+	width: 220px;
+	height: 20px;
+	text-align: center;
+	font-size: .8rem;
+	position: absolute;
+	border: 1px solid green;
+	opacity: 0;
+	transition: opacity 3s ease, top 1s ease;
+}
+
+.perfil__figure:hover figcaption {
+	opacity: 1;
+	top: calc(50% - 10px);
+}
+
+.perfil__figure img {
+	width: 100%;
 }
