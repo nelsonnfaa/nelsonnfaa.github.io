@@ -129,22 +129,30 @@ article {
 	margin: 0 auto;
 
 	figcaption {
+
+		/*top: -10%;*/
+		/*left: calc(50% - 110px);border: 1px solid $colorGris;*/
+		width: 100%;
 		background-color: $bgMenuHover;
-		top: -10%;
-		left: calc(50% - 110px);
-		width: 220px;
-		height: 20px;
+		height: 100%;
 		text-align: center;
-		font-size: 0.8rem;
 		position: absolute;
-		border: 1px solid $colorGris;
+
 		opacity: 0;
 		transition: opacity 3s ease, top 1s ease;
+
+		a {
+			display: inline-block;
+
+			img {
+				vertical-align: middle;
+			}
+		}
 	}
 
 	&:hover figcaption {
-		opacity: 1;
-		top: calc(50% - 10px);
+		opacity: 0.5;
+		top: 0%;
 	}
 
 	img {
