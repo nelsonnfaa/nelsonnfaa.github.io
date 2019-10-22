@@ -13,6 +13,7 @@ btnSubmit.addEventListener('click', (ev) => {
     ev.preventDefault();
     let formulario = document.formularioC;
     console.log(formulario.nombre.value)
+    console.log(formulario.nombre.value.length)
     console.log(formulario.direccion.value)
     console.log(formulario.telefono.value)
     console.log(formulario.mensaje.value)

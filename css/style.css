@@ -110,10 +110,8 @@ article h6 {
   overflow: hidden;
   max-width: 220px;
   margin: 0 auto;
-  display: table;
 }
 .perfil__figure figcaption {
-  display: table-cell;
   vertical-align: middle;
   /*top: -10%;*/
   /*left: calc(50% - 110px);border: 1px solid $colorGris;*/
@@ -123,7 +121,8 @@ article h6 {
   text-align: center;
   position: absolute;
   opacity: 0;
-  transition: opacity 3s ease, top 1s ease;
+  top: 100%;
+  transition: opacity 1s ease, top 1s ease;
 }
 .perfil__figure figcaption a {
   display: inline-block;
@@ -132,6 +131,14 @@ article h6 {
   vertical-align: middle;
 }
 .perfil__figure:hover figcaption {
+  position: absolute;
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  align-content: center;
+  align-items: center;
+  grid-template-columns: auto auto auto;
+  grid-gap: 10px;
   opacity: 0.5;
   top: 0%;
 }
@@ -170,6 +177,13 @@ label {
   padding: 0.5em 1.5em 0.5em 0;
 }
 
+#experiencia div:hover,
+#extras div:hover,
+#formacion div:hover {
+  font-size: 1.7rem;
+  border: 1px solid #ccc;
+}
+
 @media (min-width: 1024px) {
   #container {
     display: grid;
@@ -181,24 +195,24 @@ label {
     min-height: auto;
   }
 
-  #experiencia,
-#extras,
-#formacion {
+  #experiencia div,
+#extras div,
+#formacion div {
     display: grid;
     grid-template-columns: 1fr 0.5fr 1fr 1fr 1fr;
     grid-auto-flow: row;
   }
-  #experiencia h3,
-#experiencia h4,
-#extras h3,
-#extras h4,
-#formacion h3,
-#formacion h4 {
+  #experiencia div h3,
+#experiencia div h4,
+#extras div h3,
+#extras div h4,
+#formacion div h3,
+#formacion div h4 {
     grid-column: 1/6;
   }
-  #experiencia p,
-#extras p,
-#formacion p {
+  #experiencia div p,
+#extras div p,
+#formacion div p {
     grid-column: 2/6;
   }
 }

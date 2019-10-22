@@ -28,8 +28,8 @@
 				<img src="assets/img/imgperfil.png" alt="Foto de perfil">
 				<figcaption>
 					<a href="#"><img src="assets/img/facebook.png" alt="Facebook"></a>
-					<a href="#"><img src="assets/img/facebook.png" alt="Facebook"></a>
-					<a href="#"><img src="assets/img/facebook.png" alt="Facebook"></a>
+					<a href="#"><img src="assets/img/instagram.png" alt="Facebook"></a>
+					<a href="#"><img src="assets/img/linkedin.png" alt="Facebook"></a>
 				</figcaption>
 			</figure>
 			<h3>Datos personales</h3>
@@ -48,40 +48,65 @@
 		</article>
 		<article id="formacion">
 			<h3>Formación académica</h3>
-			<h4>2011-2013 Desarrollo de Aplicaciones web.</h4>
-			<p>Instituto Virgen de la Paloma</p>
-			<p>Formación Profesional de Grado Superior</p>
-			<h4>2009-2010 Ingeniero Técnico de Sistemas.</h4>
-			<p>Universidad Complutense de Madrid.</p>
-			<p>Primer año</p>
-			<h4>2007-2009 Administración de Sistemas Informáticos</h4>
-			<p>Instituto Virgen de la Paloma</p>
-			<p>Formación Profesional de Grado Superior</p>
+			<div>
+				<h4>2011-2013 Desarrollo de Aplicaciones web.</h4>
+				<p>Instituto Virgen de la Paloma</p>
+				<p>Formación Profesional de Grado Superior</p>
+			</div>
+			<div>
+				<h4>2009-2010 Ingeniero Técnico de Sistemas.</h4>
+				<p>Universidad Complutense de Madrid.</p>
+				<p>Primer año</p>
+			</div>
+			<div>
+				<h4>2007-2009 Administración de Sistemas Informáticos</h4>
+				<p>Instituto Virgen de la Paloma</p>
+				<p>Formación Profesional de Grado Superior</p>
+			</div>
 		</article>
 		<article id="experiencia">
 			<h3>Experiencia profesional</h3>
-			<h4>2013-actual Adatio Sistemas</h4>
-			<p>Cargo: Programador y desarrollador web.</p>
-			<p>Función: Desarrollador web(practicas/becario).</p>
-			<p>Desarrollo web back y front, desarrollo de aplicaciones de escritorio.</p>
-			<h4>2011 Servisol (suplencias)</h4>
-			<p>Cargo: Conserje.</p>
-			<p>Función: mantenimiento en general de portales y escaleras.</p>
-			<h4>2010-2010 Telecinco (practicas)</h4>
-			<p>Cargo: Técnico Soporte CAU (Practicas/Becaria)</p>
-			<p>Función: Instalación de Aplicaciones, Instalación de Sistema Operativo.</p>
-			<h4>2007 - 2007 France Telecom</h4>
-			<p>Cargo: Encuestador/a venta de seguros.</p>
-			<p>Función: información y captación de clientes para la empresa orbi, venta de Seguros para automóvil,
-				conductores, seguros para el carnet, etc.</p>
-			<h4>2006 - 2006 EMERGIA.</h4>
-			<p>Cargo: Tele operador.</p>
-			<p>Función: Departamento interno de altas fraudulentas para la empresa Jazztel. Revisión de contratos e
-				información a los clientes de sus denuncias.</p>
-			<h4>2005 - 2006 GSS.</h4>
-			<p>Cargo: Tele operador.</p>
-			<p>Departamento de atención al cliente y alta de productos para la empresa Jazztel. Capitación de clientes.
-			</p>
+			<div>
+
+				<h4>2013-actual Adatio Sistemas</h4>
+				<p>Cargo: Programador y desarrollador web.</p>
+				<p>Función: Desarrollador web(practicas/becario).</p>
+				<p>Desarrollo web back y front, desarrollo de aplicaciones de escritorio.</p>
+			</div>
+			<div>
+
+				<h4>2011 Servisol (suplencias)</h4>
+				<p>Cargo: Conserje.</p>
+				<p>Función: mantenimiento en general de portales y escaleras.</p>
+			</div>
+			<div>
+
+				<h4>2010-2010 Telecinco (practicas)</h4>
+				<p>Cargo: Técnico Soporte CAU (Practicas/Becaria)</p>
+				<p>Función: Instalación de Aplicaciones, Instalación de Sistema Operativo.</p>
+			</div>
+			<div>
+
+				<h4>2007 - 2007 France Telecom</h4>
+				<p>Cargo: Encuestador/a venta de seguros.</p>
+				<p>Función: información y captación de clientes para la empresa orbi, venta de Seguros para automóvil,
+					conductores, seguros para el carnet, etc.</p>
+			</div>
+			<div>
+
+				<h4>2006 - 2006 EMERGIA.</h4>
+				<p>Cargo: Tele operador.</p>
+				<p>Función: Departamento interno de altas fraudulentas para la empresa Jazztel. Revisión de contratos e
+					información a los clientes de sus denuncias.</p>
+			</div>
+			<div>
+
+				<h4>2005 - 2006 GSS.</h4>
+				<p>Cargo: Tele operador.</p>
+				<p>Departamento de atención al cliente y alta de productos para la empresa Jazztel. Capitación de
+					clientes.
+				</p>
+			</div>
 		</article>
 		<article id="extras">
 			<h4>Otros títulos</h4>
@@ -97,10 +122,18 @@
 		</article>
 		<article id="contacto">
 			<form action="#" method="POST" name="formularioC">
-				<input type="text" name="nombre" id="nombre" value="uno">
-				<input type="text" name="direccion" id="direccion">
-				<input type="text" name="telefono" id="telefono">
-				<textarea name="mensaje" id="mensaje" cols="30" rows="10"></textarea>
+				<label for="nombre">Nombre
+					<input type="text" name="nombre" id="nombre" placeholder="Nombre">
+				</label>
+				<label for="direccion">Direcci&oacute;n
+					<input type="text" name="direccion" id="direccion" placeholder="Dirección">
+				</label>
+				<label for="telefono">Tel&eacute;fono
+					<input type="tel" name="telefono" id="telefono" placeholder="Teléfono">
+				</label>
+				<label for="mensaje">Mensaje
+					<textarea name="mensaje" id="mensaje" cols="30" rows="10" placeholder="Mensaje"></textarea>
+				</label>
 				<button type="submit" name="envia" id="envia">Enviar</button>
 			</form>
 		</article>
