@@ -7,10 +7,14 @@ btnMenu.addEventListener('click', function (event) {
 })
 
 /* recoger datos de formulario*/
-let formulario = document.querySelector('.formulario');
 //let formulario = document.forms[0];
-formulario.addEventListener('submit', (ev) => {
+var btnSubmit = document.querySelector('#envia');
+btnSubmit.addEventListener('click', (ev) => {
     ev.preventDefault();
-    alert(formulario.name.value)
+    let formulario = document.formularioC;
+    console.log(formulario.nombre.value)
+    console.log(formulario.direccion.value)
+    console.log(formulario.telefono.value)
+    console.log(formulario.mensaje.value)
     return false
 })
