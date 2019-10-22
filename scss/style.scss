@@ -127,9 +127,11 @@ article {
 	overflow: hidden;
 	max-width: 220px;
 	margin: 0 auto;
+	display: table;
 
 	figcaption {
-
+		display: table-cell;
+		vertical-align: middle;
 		/*top: -10%;*/
 		/*left: calc(50% - 110px);border: 1px solid $colorGris;*/
 		width: 100%;
