@@ -5,6 +5,12 @@ btnMenu.addEventListener('click', function (event) {
     cabecera.classList.toggle('verMenu')
     menu.classList.toggle('header__menu--opacity')
 })
+document.querySelectorAll('.header__menu a').forEach(element => {
+    element.addEventListener('click', (e) => {
+        cabecera.classList.toggle('verMenu')
+        menu.classList.toggle('header__menu--opacity')
+    })
+});
 
 /* recoger datos de formulario*/
 //let formulario = document.forms[0];
