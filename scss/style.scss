@@ -1,14 +1,23 @@
 @import "reset.css";
 /*colores*/
-$colorGrisClaro:lightgrey;
-$colorGris:gray;
+/* HSL */
+$color1: hsla(5%, 100%, 90%, 1);
+$color2: hsla(42%, 84%, 83%, 1);
+$color3: hsla(152%, 100%, 90%, 1);
+$color4: hsla(207%, 68%, 84%, 1);
+$color5: hsla(240%, 42%, 89%, 1);
+
+/* RGB */
+$color1: rgba(255, 206, 202, 1);
+$color2: rgba(248, 225, 173, 1);
+$color3: rgba(205, 255, 232, 1);
+$color4: rgba(186, 217, 242, 1);
+$color5: rgba(216, 216, 239, 1);
+
 $colorNegro:black;
-$bgMenuHover:azure;
-$bgAzulado:#D8F0F8;
-$bgAmarillento:#FFEBD9;
-$bgRosadito:#F4DCFE;
-$bgVerdecillo:#E3FBE9;
-$bgRojito:#FFDFDF;
+$colorGris: hsla(52%, 7%, 41%, 1);
+$colorGris: rgba(111, 109, 96, 1);
+$colorBlanco:#fff;
 
 
 * {
@@ -16,6 +25,7 @@ $bgRojito:#FFDFDF;
 	text-decoration: none;
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	margin: 0;
+	color: $colorGris;
 }
 
 html {
@@ -31,10 +41,12 @@ html {
 	flex-direction: column;
 	height: 76px;
 	overflow: hidden;
-	position: relative;
+	position: fixed;
+	width: 100%;
 	transition: height 1s ease;
 	grid-area: hea;
-
+	color: $colorGris;
+	background-color: $colorBlanco;
 	&.verMenu {
 		height: 120px;
 	}
@@ -66,7 +78,7 @@ html {
 
 		&:hover {
 			font-weight: bold;
-			background-color: $bgMenuHover;
+			background-color: $color5;
 			color: $colorGris;
 		}
 	}
@@ -92,33 +104,37 @@ article {
 	h5,
 	h6 {
 		padding: 0.6rem 0 1rem;
-		;
 	}
 }
+h3{text-align: center;}
 
 #home {
-	background-color: $bgAzulado;
+	background-color: $color2;
 	grid-area: hom;
+	color: $colorGris;
 }
 
 #formacion {
 	grid-area: for;
-	background-color: $bgAmarillento;
+	background-color: $color3;
+	color: $colorGris;
 }
 
 #experiencia {
 	grid-area: exp;
-	background-color: $bgRosadito;
+	background-color: $color4;
+	color: $colorGris;
 }
 
 #extras {
 	grid-area: ext;
-	background-color: $bgVerdecillo;
+	background-color: $color5;
+	color: $colorGris;
 }
 
 #contacto {
 	grid-area: con;
-	background-color: $bgRojito;
+	background-color: $color3;
 }
 
 .perfil__figure {
@@ -131,26 +147,10 @@ article {
 	figcaption {
 		vertical-align: middle;
 		/*top: -10%;*/
-		/*left: calc(50% - 110px);border: 1px solid $colorGris;*/
+		/*left: calc(50% - 110px);border: 1px solid $color4;*/
 		width: 100%;
-		background-color: $bgMenuHover;
 		height: 100%;
 		text-align: center;
-		position: absolute;
-		opacity: 0;
-		top: 100%;
-		transition: opacity 1s ease, top 1s ease;
-
-		a {
-			display: inline-block;
-
-			img {
-				vertical-align: middle;
-			}
-		}
-	}
-
-	&:hover figcaption {
 		position: absolute;
 		display: grid;
 		justify-content: center;
@@ -159,7 +159,34 @@ article {
 		align-items: center;
 		grid-template-columns: auto auto auto;
 		grid-gap: 10px;
-		opacity: 0.5;
+		top: 100%;
+		transition: opacity 1s ease, top 1s ease;
+
+		a {
+			display: inline-block;
+			z-index: 1;
+			img {
+				vertical-align: middle;
+			}
+			&:hover img{
+				width: 105%;
+			}
+		}
+		&::before{
+			content: " ";
+			opacity: 0.5;
+			z-index: 0;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background-color: $color5;
+		}
+	}
+
+	&:hover figcaption {
+		position: absolute;
 		top: 0%;
 	}
 
@@ -172,25 +199,25 @@ article {
 input,
 textarea {
 	margin-bottom: 1rem;
-	background: #fff;
-	border: 1px solid #9c9c9c;
+	background: $colorBlanco;
+	border: 1px solid $color4;
 	width: 100%;
 	padding: 0.7em;
 	margin-bottom: 0.5rem;
 
 	&:focus {
-		outline: 3px solid gold;
+		outline: 3px solid $color1;
 	}
 }
 
 button {
-	background: $colorGrisClaro;
+	background: $color4;
 	padding: 0.7em;
 	border: 0;
 	width: 100%;
-
+	font-weight: bold;
 	&:hover {
-		background: gold;
+		background: $color1;
 	}
 }
 
@@ -205,7 +232,7 @@ label {
 #formacion div:hover {
 	//border: 1px solid red;
 	font-size: 1.7rem;
-	border: 1px solid #ccc;
+	border: 1px solid $color4;
 }
 
 @media (min-width:1024px) {
@@ -215,9 +242,6 @@ label {
 		grid-auto-flow: row;
 		grid-template-areas: "hea hea""hom for""exp exp""ext con";
 
-		article {
-			min-height: auto;
-		}
 	}
 
 	#experiencia div,
