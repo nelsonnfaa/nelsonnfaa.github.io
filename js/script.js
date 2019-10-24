@@ -18,10 +18,20 @@ var btnSubmit = document.querySelector('#envia');
 btnSubmit.addEventListener('click', (ev) => {
     ev.preventDefault();
     let formulario = document.formularioC;
-    console.log(formulario.nombre.value)
-    console.log(formulario.nombre.value.length)
-    console.log(formulario.direccion.value)
-    console.log(formulario.telefono.value)
-    console.log(formulario.mensaje.value)
+    if (formulario.nombre.value.length>4) {
+        if (formulario.correo.value.indexOf("@")>3) {
+            let datos = ''
+            datos += "<br/>Nombre: "+formulario.nombre.value
+            datos += "<br/>Correo: "+formulario.correo.value
+            datos += "<br/>Teléfono: "+formulario.telefono.value
+            datos += "<br/>Mensaje: "+formulario.mensaje.value
+            document.querySelector(".resul").innerHTML=datos
+        }else{
+            alert("Campo Correo incorrecto")
+        }
+    }else{
+        alert("Campo Nombre incorrecto")
+    }
+   
     return false
 })
