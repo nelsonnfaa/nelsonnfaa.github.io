@@ -33,17 +33,21 @@ html {
 }
 
 #container {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-auto-flow: row;
+	grid-template-areas: "hea hea""hom hom""for for""exp exp""ext ext""con con";
     width: 100%;
 }
 
 .base_menu {
-    padding-top: 118px;
+	padding-top: 76px;
 }
 
 .header {
     display: flex;
     flex-direction: column;
-    //height: 76px;
+    height: 76px;
     overflow: hidden;
     position: fixed;
     width: 100%;
@@ -52,9 +56,18 @@ html {
     color: $colorGris;
     background-color: $colorBlanco;
     z-index: 1;
-
-    height: 120px;
-
+	& .menu__btn {
+		position: absolute;
+		right: 1rem;
+		top: 1rem;
+		border: 1px solid $colorNegro;
+		padding: 0.5rem;
+		cursor: pointer;
+		display: block;
+	}
+	&.verMenu {
+		height: 100vh;
+	}
 }
 
 .header__title,
@@ -66,8 +79,13 @@ html {
     display: flex;
     justify-content: space-evenly;
     transition: opacity 0.5s ease 0.5s;
+	flex-direction: column;
+	opacity: 0;
+	transition: opacity 2s ease;
 
-
+	&.header__menu--opacity {
+		opacity: 1;
+	}
 
     a {
         color: $colorNegro;
@@ -76,23 +94,13 @@ html {
         text-align: center;
         width: 100%;
         padding: 0.5rem 0;
-
+		
         &:hover {
             font-weight: bold;
             background-color: $color5;
             color: $colorGris;
         }
     }
-}
-
-.menu__btn {
-    position: absolute;
-    right: 1rem;
-    top: 1rem;
-    border: 1px solid $colorNegro;
-    padding: 0.5rem;
-    cursor: pointer;
-    display: none;
 }
 
 article {
@@ -139,9 +147,24 @@ h3 {
 
 #contacto {
     grid-area: con;
-    background-color: $color3;
+    background-color: $color1;
 }
+#experiencia div,
+#extras div,
+#formacion div {
+	display: grid;
+	grid-template-columns: 1fr 0.5fr 1fr 1fr 1fr;
+	grid-auto-flow: row;
 
+	h3,
+	h4 {
+		grid-column: 1/6;
+	}
+
+	p {
+		grid-column: 2/6;
+	}
+}
 .perfil__figure {
     position: relative;
     border-radius: 50%;
@@ -177,7 +200,7 @@ h3 {
             }
 
             &:hover img {
-                width: 105%;
+                width: 110%;
             }
         }
 
@@ -236,72 +259,74 @@ label {
     display: block;
     padding: 0.5em 1.5em 0.5em 0;
 }
-
+#home div:hover,
 #experiencia div:hover,
 #extras div:hover,
 #formacion div:hover {
-    //border: 1px solid red;
-    font-size: 1.7rem;
+	background-color: $colorBlanco;
+	padding: 0 .4rem .5rem;
     border: 1px solid $color4;
+}
+@media (min-width: 768px) {
+	.base_menu {
+		padding-top: 118px;
+	}
+	.header {
+		height: 118px;
+		& .header__menu {
+			flex-direction: row;
+			opacity: 1;
+			transition: none;
+
+			&.header__menu--opacity {
+				opacity: 1;
+			}
+		}
+
+		& .menu__btn {
+			display: none;
+		}
+	}
+}
+
+
+@media (min-width: 1024px) {
+	body #container {
+		grid-template-areas: "hea hea""hom for""exp exp""ext con";
+	}
+}
+
+@media (min-width: 1200px) {
+	body #container {
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+		grid-template-areas: "hea hea hea hea hea ""hom for exp ext con";
+	}
+	.header__menu a:nth-child(1):hover {
+		background-color: $color2;
+	}
+	.header__menu a:nth-child(2):hover {
+		background-color: $color3;
+	}
+	.header__menu a:nth-child(3):hover {
+		background-color: $color4;
+	}
+	.header__menu a:nth-child(4):hover {
+		background-color: $color5;
+	}
+	.header__menu a:nth-child(5):hover {
+		background-color: $color1;
+	}
+
 }
 
 @media (max-width:1024px) {
-    .base_menu {
-        padding-top: 76px;
-    }
+    
 
-    .header {
-        height: 76px;
-        transition: height 1s ease;
+    
 
-        & .menu__btn {
-            display: block;
-        }
+    
 
-        &.verMenu {
-            height: 100%;
-        }
-    }
-
-    .header__menu {
-        flex-direction: column;
-        opacity: 0;
-        transition: opacity 2s ease;
-
-        &.header__menu--opacity {
-            opacity: 1;
-        }
-    }
-
-    body #container {
-        grid-template-areas: "hea hea""hom hom""for for""exp exp""ext ext""con con";
-
-    }
+    
 }
 
-#container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-auto-flow: row;
-    grid-template-areas: "hea hea""hom for""exp exp""ext con";
 
-}
-
-#experiencia div,
-#extras div,
-#formacion div {
-    display: grid;
-    grid-template-columns: 1fr 0.5fr 1fr 1fr 1fr;
-    grid-auto-flow: row;
-
-    //grid-template-rows: 1fr 1fr 1fr 1fr;
-    //grid-template-areas: "p0 p0""p1 p2""p3 p3""p4 p5";
-    h3,
-    h4 {
-        grid-column: 1/6;
-    }
-
-    p {
-        grid-column: 2/6;
-    }
-}

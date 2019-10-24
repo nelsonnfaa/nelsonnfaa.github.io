@@ -13,14 +13,19 @@ html {
   scroll-behavior: smooth; }
 
 #container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-flow: row;
+  grid-template-areas: "hea hea" "hom hom" "for for" "exp exp" "ext ext" "con con";
   width: 100%; }
 
 .base_menu {
-  padding-top: 118px; }
+  padding-top: 76px; }
 
 .header {
   display: flex;
   flex-direction: column;
+  height: 76px;
   overflow: hidden;
   position: fixed;
   width: 100%;
@@ -28,8 +33,17 @@ html {
   grid-area: hea;
   color: #6f6d60;
   background-color: #fff;
-  z-index: 1;
-  height: 120px; }
+  z-index: 1; }
+  .header .menu__btn {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    border: 1px solid black;
+    padding: 0.5rem;
+    cursor: pointer;
+    display: block; }
+  .header.verMenu {
+    height: 100vh; }
 
 .header__title,
 .header__subtitle {
@@ -38,7 +52,12 @@ html {
 .header__menu {
   display: flex;
   justify-content: space-evenly;
-  transition: opacity 0.5s ease 0.5s; }
+  transition: opacity 0.5s ease 0.5s;
+  flex-direction: column;
+  opacity: 0;
+  transition: opacity 2s ease; }
+  .header__menu.header__menu--opacity {
+    opacity: 1; }
   .header__menu a {
     color: black;
     font-size: 1.2rem;
@@ -50,15 +69,6 @@ html {
       font-weight: bold;
       background-color: #9dc3c2;
       color: #6f6d60; }
-
-.menu__btn {
-  position: absolute;
-  right: 1rem;
-  top: 1rem;
-  border: 1px solid black;
-  padding: 0.5rem;
-  cursor: pointer;
-  display: none; }
 
 article {
   min-height: 100vh;
@@ -96,7 +106,25 @@ h3 {
 
 #contacto {
   grid-area: con;
-  background-color: #d0f4de; }
+  background-color: #e4c2c6; }
+
+#experiencia div,
+#extras div,
+#formacion div {
+  display: grid;
+  grid-template-columns: 1fr 0.5fr 1fr 1fr 1fr;
+  grid-auto-flow: row; }
+  #experiencia div h3,
+  #experiencia div h4,
+  #extras div h3,
+  #extras div h4,
+  #formacion div h3,
+  #formacion div h4 {
+    grid-column: 1/6; }
+  #experiencia div p,
+  #extras div p,
+  #formacion div p {
+    grid-column: 2/6; }
 
 .perfil__figure {
   position: relative;
@@ -128,7 +156,7 @@ h3 {
       .perfil__figure figcaption a img {
         vertical-align: middle; }
       .perfil__figure figcaption a:hover img {
-        width: 105%; }
+        width: 110%; }
     .perfil__figure figcaption::before {
       content: " ";
       opacity: 0.5;
@@ -172,55 +200,49 @@ label {
   display: block;
   padding: 0.5em 1.5em 0.5em 0; }
 
+#home div:hover,
 #experiencia div:hover,
 #extras div:hover,
 #formacion div:hover {
-  font-size: 1.7rem;
+  background-color: #fff;
+  padding: 0 .4rem .5rem;
   border: 1px solid #a9def9; }
 
-@media (max-width: 1024px) {
+@media (min-width: 768px) {
   .base_menu {
-    padding-top: 76px; }
+    padding-top: 118px; }
 
   .header {
-    height: 76px;
-    transition: height 1s ease; }
+    height: 118px; }
+    .header .header__menu {
+      flex-direction: row;
+      opacity: 1;
+      transition: none; }
+      .header .header__menu.header__menu--opacity {
+        opacity: 1; }
     .header .menu__btn {
-      display: block; }
-    .header.verMenu {
-      height: 100%; }
-
-  .header__menu {
-    flex-direction: column;
-    opacity: 0;
-    transition: opacity 2s ease; }
-    .header__menu.header__menu--opacity {
-      opacity: 1; }
-
+      display: none; } }
+@media (min-width: 1024px) {
   body #container {
-    grid-template-areas: "hea hea" "hom hom" "for for" "exp exp" "ext ext" "con con"; } }
-#container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-auto-flow: row;
-  grid-template-areas: "hea hea" "hom for" "exp exp" "ext con"; }
+    grid-template-areas: "hea hea" "hom for" "exp exp" "ext con"; } }
+@media (min-width: 1200px) {
+  body #container {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: "hea hea hea hea hea " "hom for exp ext con"; }
 
-#experiencia div,
-#extras div,
-#formacion div {
-  display: grid;
-  grid-template-columns: 1fr 0.5fr 1fr 1fr 1fr;
-  grid-auto-flow: row; }
-  #experiencia div h3,
-  #experiencia div h4,
-  #extras div h3,
-  #extras div h4,
-  #formacion div h3,
-  #formacion div h4 {
-    grid-column: 1/6; }
-  #experiencia div p,
-  #extras div p,
-  #formacion div p {
-    grid-column: 2/6; }
+  .header__menu a:nth-child(1):hover {
+    background-color: #e8d7ff; }
+
+  .header__menu a:nth-child(2):hover {
+    background-color: #d0f4de; }
+
+  .header__menu a:nth-child(3):hover {
+    background-color: #a9def9; }
+
+  .header__menu a:nth-child(4):hover {
+    background-color: #9dc3c2; }
+
+  .header__menu a:nth-child(5):hover {
+    background-color: #e4c2c6; } }
 
 /*# sourceMappingURL=style.css.map */
